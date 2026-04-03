@@ -32,6 +32,11 @@ public class RoomController {
         return roomService.getAvailableRooms();
     }
 
+    @PostMapping("/apply")
+    public Room applyForRoom(@RequestParam String regNo) {
+        return roomService.applyForRoom(regNo);
+    }
+
     @DeleteMapping("/{id}")
     public String deleteRoom(
             @PathVariable Long id,
